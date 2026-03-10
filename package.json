@@ -2,6 +2,9 @@
     "name": "lpcasamento-root",
     "version": "1.0.0",
     "description": "Root package manager for the wedding site",
+    "workspaces": [
+        "site"
+    ],
     "scripts": {
         "dev": "npm --prefix site run dev",
         "build": "npm --prefix site run build",
