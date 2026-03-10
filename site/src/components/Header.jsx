@@ -18,8 +18,10 @@ const Header = () => {
         { name: 'Nossa História', href: '#historia' },
         { name: 'O Evento', href: '#evento' },
         { name: 'Local', href: '#local' },
+        { name: 'Galeria', href: '#galeria' },
         { name: 'Presentes', href: '#presentes' },
         { name: 'RSVP', href: '#rsvp' },
+        { name: 'Save the Date', href: '/savethedate' },
     ];
 
     return (
