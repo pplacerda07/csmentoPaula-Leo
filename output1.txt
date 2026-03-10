@@ -1,0 +1,43 @@
+BRIEFING – SITE DE CASAMENTO
+Casamento Paula & Leo
+1. Contexto Geral
+O site será o canal oficial de informações do casamento, servindo como referência central para
+convidados. Embora alguns elementos de marca ainda estejam em desenvolvimento (como brasão
+e ícones), a identidade visual base já está definida e o site pode ser desenvolvido normalmente.
+2. Informações do Evento
+Casal: Paula & Leo
+Local: Fazenda Borges
+Site do local: https://fazendaborges.com.br/
+Data: (a definir)
+3. Direção de Identidade Visual
+A identidade visual segue uma linha clean + rústica sofisticada.
+Conceito: Minimalismo elegante com elementos naturais e orgânicos.
+Cores Base: Verde (principal) e Branco (base).
+Paleta Complementar: Tons neutros e naturais, madeira em tom palha, bege / off-white / areia.
+4. Estilo Visual Desejado
+O site deve transmitir sofisticação leve, naturalidade, sensação acolhedora e limpeza visual. Evitar
+excesso de elementos decorativos ou estética caricata. Sugestão de elementos: texturas sutis,
+espaços em branco generosos, tipografia elegante e detalhes orgânicos.
+5. Referência de Estrutura
+Utilizar como referência de organização e fluxo (não de design):
+https://casamentomarianaebernardo.com/. O layout deve ser original e não semelhante ao site
+citado.
+6. Estrutura de Conteúdo (Sugestão)
+Home / Abertura
+Nossa História / Sobre o casal
+Informações do Evento
+Local / Como Chegar
+Dress Code (se houver)
+Lista de Presentes (se houver)
+RSVP / Confirmação de Presença
+Contatos / Dúvidas
+
+7. Elementos de Marca (Status Atual)
+Ainda não disponíveis: Brasão, ícones personalizados, grafismos proprietários. O design deve
+funcionar bem sem depender desses elementos e permitir inclusão futura.
+8. Diretrizes Técnicas / UX
+Site leve e rápido, totalmente responsivo (mobile-first), navegação simples, RSVP funcional e boa
+legibilidade.
+9. Entregáveis Visuais
+Paleta final será enviada posteriormente contendo códigos HEX / RGB e variações de cores.
+

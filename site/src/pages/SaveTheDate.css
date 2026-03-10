@@ -1,0 +1,71 @@
+.save-the-date-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+}
+
+.std-content {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    width: 100%;
+}
+
+.std-form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    margin-top: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.std-subtitle {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.std-form {
+    text-align: left;
+}
+
+.std-form input,
+.std-form select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-main);
+    background-color: var(--color-white);
+    transition: var(--transition-smooth);
+}
+
+.std-form input:focus,
+.std-form select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 82, 73, 0.1);
+}
+
+@media (max-width: 768px) {
+    .save-the-date-page {
+        background-attachment: scroll;
+    }
+
+    .std-form-container {
+        padding: 1.5rem;
+    }
+}
