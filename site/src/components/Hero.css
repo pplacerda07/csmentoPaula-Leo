@@ -45,9 +45,6 @@
     z-index: 3;
     padding: 2rem 1.5rem;
     max-width: 800px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
 }
 
 .hero-pre-title {

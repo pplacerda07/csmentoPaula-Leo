@@ -34,6 +34,10 @@ const Gallery = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="text-center" style={{ marginTop: '3rem', textAlign: 'center' }}>
+                    <a href="#" className="btn btn-primary" style={{ padding: '0.75rem 2.5rem', fontSize: '1.1rem' }}>Ver Todas as Fotos</a>
+                </div>
             </div>
         </section>
     );

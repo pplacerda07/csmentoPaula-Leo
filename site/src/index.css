@@ -128,6 +128,7 @@ img {
 
 .btn-primary:hover {
   background-color: var(--color-primary-light);
+  color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-subtle);
 }
