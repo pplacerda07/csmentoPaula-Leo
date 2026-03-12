@@ -28,7 +28,9 @@ const Header = () => {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
                 <div className="logo">
-                    <a href="#">Paula & Leo</a>
+                    <a href="#">
+                        <img src="/images/BrasaoSVG.svg" alt="Paula & Leo" className="brasao-logo" />
+                    </a>
                 </div>
 
                 <nav className="desktop-nav">
