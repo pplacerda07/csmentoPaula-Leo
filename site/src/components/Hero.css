@@ -108,3 +108,25 @@
         /* Better performance on mobile */
     }
 }
+/* Minimal Countdown for Hero */
+.hero-countdown-wrapper .countdown-container {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    padding: 1rem 0 !important;
+    margin: 2rem auto 0 !important;
+    box-shadow: none !important;
+}
+
+.hero-countdown-wrapper .countdown-number {
+    color: var(--color-white) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-countdown-wrapper .countdown-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-countdown-wrapper .countdown-divider {
+    color: rgba(255, 255, 255, 0.5) !important;
+}

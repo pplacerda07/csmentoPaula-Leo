@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import './Gallery.css';
 
 const Gallery = () => {
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
     // Array of placeholder images
     const photos = [
         { id: 1, src: '/gallery/wedding-1.jpeg', alt: 'Moment 1' },
@@ -28,7 +30,11 @@ const Gallery = () => {
 
                 <div className="gallery-grid">
                     {photos.map((photo) => (
-                        <div key={photo.id} className="gallery-item animate-fade-in">
+                        <div 
+                            key={photo.id} 
+                            className="gallery-item animate-fade-in"
+                            onClick={() => setSelectedPhoto(photo)}
+                        >
                             <img src={photo.src} alt={photo.alt} className="gallery-image" />
                             <div className="gallery-overlay">
                                 <span className="gallery-icon">+</span>
@@ -41,6 +47,18 @@ const Gallery = () => {
                     <a href="#" className="btn btn-primary" style={{ padding: '0.75rem 2.5rem', fontSize: '1.1rem' }}>Ver Todas as Fotos</a>
                 </div>
             </div>
+
+            {/* Lightbox Modal */}
+            {selectedPhoto && (
+                <div className="lightbox" onClick={() => setSelectedPhoto(null)}>
+                    <button className="lightbox-close" onClick={() => setSelectedPhoto(null)}>
+                        <X size={32} />
+                    </button>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedPhoto.src} alt={selectedPhoto.alt} />
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

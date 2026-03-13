@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Countdown from '../components/Countdown';
 import './SaveTheDate.css';
 
 const SaveTheDate = () => {
@@ -31,7 +32,8 @@ const SaveTheDate = () => {
             <div className="std-content animate-fade-in">
                 <h2 className="hero-pre-title">Save The Date</h2>
                 <h1 className="hero-title">Paula & Leo</h1>
-                <p className="hero-date">15 de Novembro de 2026 • Fazenda Borges</p>
+                <Countdown />
+                <p className="hero-date">19 de Setembro de 2026 • Fazenda Borges</p>
 
                 <div className="std-form-container delay-200 animate-fade-in">
                     <p className="std-subtitle">Reserve esta data especial e confirme sua presença!</p>

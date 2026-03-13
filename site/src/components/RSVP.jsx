@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import Countdown from './Countdown';
 import './RSVP.css';
 
 const RSVP = () => {
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
-        attending: 'yes',
-        guests: '0',
         message: ''
     });
 
@@ -21,21 +19,22 @@ const RSVP = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Simulate form submission
-        alert(`Obrigado, ${formData.name}! Sua confirmação foi recebida.`);
-        setFormData({ name: '', email: '', attending: 'yes', guests: '0', message: '' });
+        alert(`Obrigado, ${formData.name}! Sua mensagem foi enviada com carinho.`);
+        setFormData({ name: '', message: '' });
     };
 
     return (
         <section className="section rsvp" id="rsvp">
             <div className="container rsvp-container">
                 <div className="rsvp-header">
-                    <h2 className="section-title">Confirme sua Presença</h2>
-                    <p>Por favor, nos informe até 15 de Outubro de 2026 se poderá celebrar conosco.</p>
+                    <Countdown />
+                    <h2 className="section-title">Envie uma mensagem para os noivos</h2>
+                    <p>Queremos muito ler as palavras de carinho de cada um de vocês.</p>
                 </div>
 
                 <form className="rsvp-form animate-fade-in delay-100" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="name">Nome Completo</label>
+                        <label htmlFor="name">Seu Nome</label>
                         <input
                             type="text"
                             id="name"
@@ -43,53 +42,8 @@ const RSVP = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            placeholder="Ex: João da Silva"
+                            placeholder="Como você gostaria de ser identificado?"
                         />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="email">E-mail</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            placeholder="Ex: joao@email.com"
-                        />
-                    </div>
-
-                    <div className="form-row">
-                        <div className="form-group half">
-                            <label htmlFor="attending">Você irá ao evento?</label>
-                            <select
-                                id="attending"
-                                name="attending"
-                                value={formData.attending}
-                                onChange={handleChange}
-                            >
-                                <option value="yes">Sim, estarei lá!</option>
-                                <option value="no">Não poderei comparecer</option>
-                            </select>
-                        </div>
-
-                        <div className="form-group half">
-                            <label htmlFor="guests">Acompanhantes</label>
-                            <select
-                                id="guests"
-                                name="guests"
-                                value={formData.guests}
-                                onChange={handleChange}
-                                disabled={formData.attending === 'no'}
-                            >
-                                <option value="0">0 (Irei sozinho)</option>
-                                <option value="1">1 Acompanhante</option>
-                                <option value="2">2 Acompanhantes</option>
-                                <option value="3">3 Acompanhantes</option>
-                                <option value="4">4 Acompanhantes</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div className="form-group">
@@ -105,7 +59,7 @@ const RSVP = () => {
                     </div>
 
                     <button type="submit" className="btn btn-primary submit-btn">
-                        Enviar Confirmação
+                        Enviar Mensagem
                     </button>
                 </form>
             </div>
