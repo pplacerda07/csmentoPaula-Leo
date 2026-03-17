@@ -1,161 +1,126 @@
-.gallery {
-    background-color: var(--color-light);
-    padding: 5rem 0;
-}
+/* =========================================
+   Gallery Carousel – Home Page
+   ========================================= */
 
-.section-header.text-center {
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 12px;
+.gallery-carousel-section {
+    background-color: var(--color-light, var(--color-base));
+    padding: 5rem 0 4rem;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.gallery-carousel-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.gallery-image {
+.gallery-carousel-section .section-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* ---- Carousel Wrapper ---- */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Fade masks on left & right edges */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 6%,
+        black 94%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 6%,
+        black 94%,
+        transparent 100%
+    );
+}
+
+/* ---- Track (the moving strip) ---- */
+.carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: carouselScroll 40s linear infinite;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* ---- Individual Slide ---- */
+.carousel-slide {
+    flex-shrink: 0;
+    width: 320px;
+    height: 380px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+}
+
+/* ---- Image ---- */
+.carousel-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.5s ease;
-    /* In case placeholder images don't load, adding a background color */
-    background-color: var(--color-gray-light);
+    background-color: var(--color-accent-sand);
 }
 
-.gallery-item:hover .gallery-image {
-    transform: scale(1.05);
+.carousel-slide:hover .carousel-image {
+    transform: scale(1.06);
 }
 
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(var(--color-primary-rgb), 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* ---- CTA Button ---- */
+.carousel-cta {
+    text-align: center;
+    margin-top: 2.5rem;
 }
 
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-icon {
-    color: var(--color-white);
-    font-size: 2.5rem;
-    font-weight: 300;
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-icon {
-    transform: scale(1);
-}
-
-/* Make some items span differently for a masonry-like look on larger screens */
-@media (min-width: 768px) {
-    .gallery-item:nth-child(3n+1) {
-        grid-column: span 2;
-        grid-row: span 2;
+/* ---- Scroll Animation ---- */
+@keyframes carouselScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translate exactly half (the original set) so it loops seamlessly */
+        transform: translateX(-50%);
     }
 }
 
-@media (max-width: 576px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .carousel-slide {
+        width: 260px;
+        height: 320px;
+    }
+
+    .carousel-track {
         gap: 1rem;
     }
-    .gallery-item {
-        aspect-ratio: auto;
-        border-radius: 8px;
-    }
-    .gallery-image {
-        height: auto;
-        max-height: 500px;
+
+    .gallery-carousel-section {
+        padding: 4rem 0 3rem;
     }
 }
 
-/* Lightbox Styles */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    cursor: zoom-out;
-    animation: fadeIn 0.3s ease;
-}
-
-.lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90vh;
-    cursor: default;
-}
-
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 90vh;
-    display: block;
-    border-radius: 4px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    background: transparent;
-    border: none;
-    color: var(--color-white);
-    cursor: pointer;
-    z-index: 2001;
-    transition: var(--transition-smooth);
-    padding: 0.5rem;
-}
-
-.lightbox-close:hover {
-    transform: scale(1.1);
-    color: var(--color-accent-straw);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@media (max-width: 768px) {
-    .lightbox {
-        padding: 1rem;
-    }
-    .lightbox-close {
-        top: 1rem;
-        right: 1rem;
+@media (max-width: 480px) {
+    .carousel-slide {
+        width: 220px;
+        height: 280px;
     }
 }

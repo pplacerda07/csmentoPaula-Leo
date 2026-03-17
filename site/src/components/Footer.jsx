@@ -17,15 +17,16 @@ const Footer = () => {
                             <li><a href="#historia">Nossa História</a></li>
                             <li><a href="#evento">O Evento</a></li>
                             <li><a href="#presentes">Lista de Presentes</a></li>
-                            <li><a href="#rsvp">RSVP</a></li>
+                            <li><a href="https://noivos.casar.com/paulaeleonardo-casamento#/rsvp" target="_blank" rel="noopener noreferrer">RSVP</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-column">
                         <h4>Dúvidas?</h4>
                         <ul>
-                            <li><a href="mailto:contato@paulaeleo.com">contato@paulaeleo.com</a></li>
-                            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                            <li><strong>Cerimonial:</strong> Cida Dornelas</li>
+                            <li><a href="tel:31988767174">(31) 98876-7174</a></li>
+                            <li><a href="https://wa.me/5531988767174" target="_blank" rel="noopener noreferrer">WhatsApp Cerimonial</a></li>
                         </ul>
                     </div>
                 </div>

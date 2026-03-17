@@ -1,3 +1,13 @@
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(8px); opacity: 1; }
+}
+
 .hero {
     position: relative;
     height: 100vh;
@@ -7,14 +17,10 @@
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    background-image: url('/images/hero-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    /* Parallax effect */
+    overflow: hidden;
 }
 
-/* Fallback if image doesn't load immediately */
+/* Background image with subtle zoom animation */
 .hero::before {
     content: '';
     position: absolute;
@@ -22,8 +28,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-primary);
-    z-index: -1;
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    animation: heroZoom 20s ease-in-out infinite alternate;
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -33,10 +42,9 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.5) 0%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(0, 0, 0, 0.6) 100%);
-    /* Removed backdrop-filter to show church image clearly */
+            rgba(0, 0, 0, 0.45) 0%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.55) 100%);
     z-index: 2;
 }
 
@@ -48,17 +56,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.hero-brasao {
-    margin-bottom: 1.5rem;
-}
-
-.hero-brasao img {
-    height: 150px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
 }
 
 .hero-pre-title {
@@ -94,27 +91,53 @@
     gap: 1rem;
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        margin-bottom: 1rem;
-    }
-
-    .hero-date {
-        margin-bottom: 2rem;
-    }
-
-    .hero {
-        background-attachment: scroll;
-        /* Better performance on mobile */
-    }
+.hero-actions .btn-primary {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--color-white);
 }
-/* Minimal Countdown for Hero */
+
+.hero-actions .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: scrollBounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.hero-scroll-indicator span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Countdown in Hero */
+.hero-countdown-wrapper {
+    margin-top: 2rem;
+}
+
 .hero-countdown-wrapper .countdown-container {
     background: transparent !important;
     backdrop-filter: none !important;
     border: none !important;
     padding: 1rem 0 !important;
-    margin: 2rem auto 0 !important;
+    margin: 0 auto !important;
     box-shadow: none !important;
 }
 
@@ -129,4 +152,23 @@
 
 .hero-countdown-wrapper .countdown-divider {
     color: rgba(255, 255, 255, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        margin-bottom: 1rem;
+    }
+
+    .hero-date {
+        margin-bottom: 2rem;
+    }
+
+    .hero::before {
+        animation: none;
+        background-attachment: scroll;
+    }
+    
+    .hero-scroll-indicator {
+        bottom: 1.5rem;
+    }
 }

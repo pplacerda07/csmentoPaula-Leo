@@ -50,30 +50,48 @@
 
 .footer-column li {
     margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
 }
 
 .footer-column a {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     transition: var(--transition-smooth);
+    position: relative;
+    display: inline-block;
 }
 
 .footer-column a:hover {
     color: var(--color-accent-straw);
+    transform: translateX(3px);
 }
 
 .footer-bottom {
     text-align: center;
     padding: 1.5rem 0;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
-    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding-top: 3.5rem;
+    }
+
     .footer-container {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand h2 {
+        text-align: center;
     }
 
     .footer-links {

@@ -5,6 +5,7 @@ import OurStory from '../components/OurStory';
 import EventDetails from '../components/EventDetails';
 import Gallery from '../components/Gallery';
 import Registry from '../components/Registry';
+import Tips from '../components/Tips';
 import RSVP from '../components/RSVP';
 import Footer from '../components/Footer';
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Gallery />
             <EventDetails />
             <Registry />
+            <Tips />
             <RSVP />
             <Footer />
         </div>

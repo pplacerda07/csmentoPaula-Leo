@@ -1,67 +1,29 @@
-import React, { useState } from 'react';
-import Countdown from './Countdown';
+import React from 'react';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 import './RSVP.css';
 
 const RSVP = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Simulate form submission
-        alert(`Obrigado, ${formData.name}! Sua mensagem foi enviada com carinho.`);
-        setFormData({ name: '', message: '' });
-    };
+    const sectionRef = useRevealOnScroll();
 
     return (
-        <section className="section rsvp" id="rsvp">
+        <section className="section rsvp" id="rsvp" ref={sectionRef}>
             <div className="container rsvp-container">
-                <div className="rsvp-header">
-                    <Countdown />
-                    <h2 className="section-title">Envie uma mensagem para os noivos</h2>
-                    <p>Queremos muito ler as palavras de carinho de cada um de vocês.</p>
+                <div className="rsvp-header reveal reveal-up">
+                    <h2 className="section-title">Confirme sua Presença</h2>
+                    <hr className="section-divider" />
+                    <p>Ficaremos muito felizes em contar com você nesse dia tão especial.</p>
                 </div>
 
-                <form className="rsvp-form animate-fade-in delay-100" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="name">Seu Nome</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            placeholder="Como você gostaria de ser identificado?"
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="message">Deixe uma mensagem para os noivos (Opcional)</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            value={formData.message}
-                            onChange={handleChange}
-                            placeholder="Escreva algo especial..."
-                        ></textarea>
-                    </div>
-
-                    <button type="submit" className="btn btn-primary submit-btn">
-                        Enviar Mensagem
-                    </button>
-                </form>
+                <div className="rsvp-actions reveal reveal-up reveal-delay-2 text-center">
+                    <a 
+                        href="https://noivos.casar.com/paulaeleonardo-casamento#/rsvp" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="btn btn-primary rsvp-btn"
+                    >
+                        Confirmar Presença
+                    </a>
+                </div>
             </div>
         </section>
     );

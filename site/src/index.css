@@ -17,15 +17,17 @@
 
   /* Spacing & Layout */
   --max-width: 1200px;
-  --section-padding: 5rem 2rem;
+  --section-padding: 6rem 2rem;
   
   /* Utilities */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-full: 9999px;
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 *, *::before, *::after {
@@ -100,18 +102,21 @@ img {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section {
   padding: var(--section-padding);
 }
 
-/* Base button styles */
+/* =========================================
+   Button System — Premium Feel
+   ========================================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 2rem;
+  padding: 0.85rem 2.2rem;
   border-radius: var(--radius-full);
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -119,6 +124,26 @@ img {
   font-size: 0.875rem;
   transition: var(--transition-smooth);
   border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary {
@@ -130,7 +155,7 @@ img {
   background-color: var(--color-primary-light);
   color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: 0 6px 25px rgba(59, 82, 73, 0.25);
 }
 
 .btn-outline {
@@ -142,9 +167,57 @@ img {
 .btn-outline:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(59, 82, 73, 0.15);
 }
 
-/* Animations */
+/* =========================================
+   Scroll-Reveal Animation System
+   ========================================= */
+
+/* Base: elements start invisible */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Variants — initial states */
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal-scale {
+  transform: scale(0.92);
+}
+
+/* Revealed state — applies when IntersectionObserver fires */
+.reveal.revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger delays for children */
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+
+/* =========================================
+   Legacy Page-Load Animations (keep for Hero)
+   ========================================= */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -154,7 +227,58 @@ img {
   animation: fadeIn 1s ease-out forwards;
 }
 
-/* Utility to stagger animations */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* =========================================
+   Section Divider — Elegant Golden Line
+   ========================================= */
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-straw), transparent);
+  margin: 1rem auto 2rem;
+  border: none;
+}
+
+/* =========================================
+   Utilities
+   ========================================= */
+.text-center {
+  text-align: center !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+/* =========================================
+   Global Mobile Responsiveness
+   ========================================= */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 1.25rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.8rem;
+    min-height: 48px; /* Touch-friendly */
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3.5rem 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}

@@ -20,8 +20,7 @@ const Header = () => {
         { name: 'Local', href: '#local' },
         { name: 'Galeria', href: '#galeria' },
         { name: 'Presentes', href: '#presentes' },
-        { name: 'RSVP', href: '#rsvp' },
-        { name: 'Save the Date', href: '/savethedate' },
+        { name: 'RSVP', href: 'https://noivos.casar.com/paulaeleonardo-casamento#/rsvp' },
     ];
 
     return (
@@ -37,7 +36,13 @@ const Header = () => {
                     <ul>
                         {navLinks.map((link) => (
                             <li key={link.name}>
-                                <a href={link.href}>{link.name}</a>
+                                <a 
+                                    href={link.href}
+                                    target={link.href.startsWith('http') ? '_blank' : '_self'}
+                                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                                >
+                                    {link.name}
+                                </a>
                             </li>
                         ))}
                     </ul>
@@ -57,7 +62,12 @@ const Header = () => {
                 <ul>
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <a href={link.href} onClick={() => setMobileMenuOpen(false)}>
+                            <a 
+                                href={link.href} 
+                                onClick={() => setMobileMenuOpen(false)}
+                                target={link.href.startsWith('http') ? '_blank' : '_self'}
+                                rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                            >
                                 {link.name}
                             </a>
                         </li>

@@ -1,0 +1,121 @@
+.tips {
+    background-color: var(--color-base);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tip-card {
+    background-color: var(--color-white);
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-smooth);
+    border: 1px solid var(--color-accent-sand);
+}
+
+.tip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--color-accent-straw);
+}
+
+.tip-icon {
+    color: var(--color-primary-light);
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.tip-card:hover .tip-icon {
+    color: var(--color-primary);
+    transform: scale(1.15);
+}
+
+.tip-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.tip-card p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+.special-tip {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2d3e37 100%);
+    color: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.special-tip::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.special-tip-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.train-emoji {
+    font-size: 2.5rem;
+    animation: trainBounce 3s ease-in-out infinite;
+}
+
+@keyframes trainBounce {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.special-tip p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.special-tip .btn-primary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.special-tip .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.special-tip-actions {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .special-tip {
+        padding: 2rem 1.5rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}

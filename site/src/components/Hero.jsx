@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronDown } from 'lucide-react';
 import Countdown from './Countdown';
 import './Hero.css';
 
@@ -12,13 +13,17 @@ const Hero = () => {
                 <p className="hero-date animate-fade-in delay-300">19 de Setembro • 2026 • Fazenda Borges</p>
 
                 <div className="hero-actions animate-fade-in delay-300">
-                    <a href="#rsvp" className="btn btn-primary">Confirme sua Presença</a>
+                    <a href="https://noivos.casar.com/paulaeleonardo-casamento#/rsvp" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Confirme sua Presença</a>
                 </div>
 
                 <div className="hero-countdown-wrapper animate-fade-in delay-400">
                     <Countdown />
                 </div>
             </div>
+            <a href="#historia" className="hero-scroll-indicator animate-fade-in delay-400">
+                <span>Scroll</span>
+                <ChevronDown size={20} />
+            </a>
         </section>
     );
 };
