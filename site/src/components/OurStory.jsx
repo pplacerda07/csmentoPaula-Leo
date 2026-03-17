@@ -10,7 +10,7 @@ const OurStory = () => {
             <div className="container story-container">
                 <div className="story-image reveal reveal-left">
                     <img 
-                        src="/foto_comotudocomecou.jpeg" 
+                        src="/gallery/wedding-30.jpeg" 
                         alt="Como tudo começou - Paula e Leonardo" 
                         className="story-img"
                     />

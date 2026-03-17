@@ -9,14 +9,14 @@ const Gallery = () => {
     const photos = [
         { id: 1, src: '/gallery/wedding-1.jpeg', alt: 'Momento 1' },
         { id: 2, src: '/gallery/wedding-2.jpeg', alt: 'Momento 2' },
-        { id: 3, src: '/gallery/wedding-3.jpeg', alt: 'Momento 3' },
         { id: 4, src: '/gallery/wedding-4.jpeg', alt: 'Momento 4' },
-        { id: 5, src: '/gallery/wedding-5.jpeg', alt: 'Momento 5' },
         { id: 6, src: '/gallery/wedding-6.jpeg', alt: 'Momento 6' },
         { id: 7, src: '/gallery/wedding-7.jpeg', alt: 'Momento 7' },
         { id: 8, src: '/gallery/wedding-8.jpeg', alt: 'Momento 8' },
         { id: 9, src: '/gallery/wedding-9.jpeg', alt: 'Momento 9' },
         { id: 10, src: '/gallery/wedding-10.jpeg', alt: 'Momento 10' },
+        { id: 11, src: '/gallery/wedding-11.jpeg', alt: 'Momento 11' },
+        { id: 12, src: '/gallery/wedding-12.jpeg', alt: 'Momento 12' },
     ];
 
     return (
