@@ -31,7 +31,7 @@ const SaveTheDate = () => {
             <div className="hero-overlay"></div>
             <div className="std-content animate-fade-in">
                 <h2 className="hero-pre-title">Save The Date</h2>
-                <h1 className="hero-title">Paula & Leo</h1>
+                <h1 className="hero-title">Paula & Leonardo</h1>
                 <Countdown />
                 <p className="hero-date">19 de Setembro de 2026 • Fazenda Borges</p>
 

@@ -28,7 +28,7 @@ const Header = () => {
             <div className="header-container">
                 <div className="logo">
                     <a href="#">
-                        <img src="/images/BrasaoSVG.svg" alt="Paula & Leo" className="brasao-logo" />
+                        <img src="/images/BrasaoSVG.svg" alt="Paula & Leonardo" className="brasao-logo" />
                     </a>
                 </div>
 

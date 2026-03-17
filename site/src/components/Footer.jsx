@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="footer" id="contatos">
             <div className="container footer-container">
                 <div className="footer-brand">
-                    <h2>Paula & Leo</h2>
+                    <h2>Paula & Leonardo</h2>
                     <p>Com amor, celebramos juntos.</p>
                 </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2026 Paula & Leo. Todos os direitos reservados. Feito com amor.</p>
+                <p>&copy; 2026 Paula & Leonardo. Todos os direitos reservados. Feito com amor.</p>
             </div>
         </footer>
     );

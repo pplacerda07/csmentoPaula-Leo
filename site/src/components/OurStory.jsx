@@ -11,7 +11,7 @@ const OurStory = () => {
                 <div className="story-image reveal reveal-left">
                     <img 
                         src="/foto_comotudocomecou.jpeg" 
-                        alt="Como tudo começou - Paula e Leo" 
+                        alt="Como tudo começou - Paula e Leonardo" 
                         className="story-img"
                     />
                 </div>
