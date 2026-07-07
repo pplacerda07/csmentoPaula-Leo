@@ -8,15 +8,21 @@ const Gallery = () => {
 
     const photos = [
         { id: 1, src: '/gallery/wedding-1.jpeg', alt: 'Momento 1' },
+        { id: 'pl-1', src: '/gallery/paula_leofotos/0E3A0965 (1).JPG', alt: 'Paula & Leo' },
         { id: 2, src: '/gallery/wedding-2.jpeg', alt: 'Momento 2' },
+        { id: 'pl-2', src: '/gallery/paula_leofotos/7F3A1373.JPG', alt: 'Paula & Leo' },
         { id: 4, src: '/gallery/wedding-4.jpeg', alt: 'Momento 4' },
+        { id: 'pl-3', src: '/gallery/paula_leofotos/ParaImprimir_25demaiode2026_160.jpg', alt: 'Paula & Leo' },
         { id: 6, src: '/gallery/wedding-6.jpeg', alt: 'Momento 6' },
-        { id: 7, src: '/gallery/wedding-7.jpeg', alt: 'Momento 7' },
+        { id: 'pl-4', src: '/gallery/paula_leofotos/ParaImprimir_25demaiode2026_303.jpg', alt: 'Paula & Leo' },
         { id: 8, src: '/gallery/wedding-8.jpeg', alt: 'Momento 8' },
-        { id: 9, src: '/gallery/wedding-9.jpeg', alt: 'Momento 9' },
+        { id: 'pl-5', src: '/gallery/paula_leofotos/ParaImprimir_25demaiode2026_363.jpg', alt: 'Paula & Leo' },
         { id: 10, src: '/gallery/wedding-10.jpeg', alt: 'Momento 10' },
+        { id: 'pl-6', src: '/gallery/paula_leofotos/7F3A1748.JPG', alt: 'Paula & Leo' },
         { id: 11, src: '/gallery/wedding-11.jpeg', alt: 'Momento 11' },
+        { id: 'pl-7', src: '/gallery/paula_leofotos/ParaImprimir_25demaiode2026_435.jpg', alt: 'Paula & Leo' },
         { id: 12, src: '/gallery/wedding-12.jpeg', alt: 'Momento 12' },
+        { id: 'pl-8', src: '/gallery/paula_leofotos/0E3A2961.JPG', alt: 'Paula & Leo' },
     ];
 
     return (
