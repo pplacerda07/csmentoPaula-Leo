@@ -6,7 +6,8 @@ const Hotels = () => {
         {
             name: "Fazenda Borges",
             address: "Fazenda Borges, Rio Piracicaba - MG",
-            phone: "+55 31 99070-3717"
+            phone: "+55 31 99070-3717",
+            whatsapp: "https://wa.me/5531990703717"
         },
         {
             name: "Villa Hotel Rio Piracicaba - MG",

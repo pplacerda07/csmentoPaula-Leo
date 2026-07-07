@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Phone, Globe, Instagram, Facebook } from 'lucide-react';
+import { ArrowLeft, MapPin, Phone, Globe, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import './InfoPage.css';
 
 const InfoPage = ({ title, items }) => {
@@ -40,6 +40,11 @@ const InfoPage = ({ title, items }) => {
                                     {item.website && (
                                         <a href={item.website} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
                                             <Globe size={16} /> Ver Site
+                                        </a>
+                                    )}
+                                    {item.whatsapp && (
+                                        <a href={item.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm" style={{ background: '#25D366', borderColor: '#25D366' }}>
+                                            <MessageCircle size={16} /> WhatsApp
                                         </a>
                                     )}
                                     {item.instagram && (
