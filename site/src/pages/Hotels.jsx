@@ -4,6 +4,11 @@ import InfoPage from './InfoPage';
 const Hotels = () => {
     const hotelData = [
         {
+            name: "Fazenda Borges",
+            address: "Fazenda Borges, Rio Piracicaba - MG",
+            phone: "+55 31 99070-3717"
+        },
+        {
             name: "Villa Hotel Rio Piracicaba - MG",
             address: "Rua Boanerges Tostes Junior - Samitre, Rio Piracicaba - MG, 35940-000",
             phone: "(31) 97215-2727",

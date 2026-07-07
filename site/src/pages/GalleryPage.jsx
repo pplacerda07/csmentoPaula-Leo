@@ -6,7 +6,7 @@ import './GalleryPage.css';
 const GalleryPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
-    const photosToExclude = [3, 5, 17, 24];
+    const photosToExclude = [3, 5, 16, 17, 23, 24, 28, 32];
     const weddingPhotos = Array.from({ length: 37 }, (_, i) => ({
         id: i + 1,
         src: `/gallery/wedding-${i + 1}.jpeg`,
